@@ -1,0 +1,8 @@
+{
+  "appId": "com.maher.kaitv32",
+  "appName": "কাইত",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

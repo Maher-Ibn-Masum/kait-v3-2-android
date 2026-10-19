@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="430" viewBox="0 0 680 430"><defs>
+<linearGradient id="paper" x2=".9" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#fff8e9"/><stop offset="1" stop-color="#d4be92"/></linearGradient>
+<linearGradient id="g" x2=".2" y2="1"><stop stop-color="#fff9be"/><stop offset=".27" stop-color="#ffe17a"/><stop offset=".65" stop-color="#c78d20"/><stop offset="1" stop-color="#835009"/></linearGradient>
+<filter id="shade" x="-.4" y="-.4" width="1.8" height="2.2"><feDropShadow dx="0" dy="15" stdDeviation="13" flood-color="#000" flood-opacity=".68"/></filter>
+<filter id="light"><feGaussianBlur stdDeviation="7"/></filter></defs>
+<ellipse cx="345" cy="350" rx="190" ry="35" fill="#e0a83a" opacity=".13" filter="url(#light)"/>
+<g filter="url(#shade)"><g transform="rotate(-21 253 217)"><rect x="163" y="82" width="181" height="273" rx="17" fill="url(#paper)" stroke="#ecd18f" stroke-width="8"/><rect x="176" y="95" width="155" height="247" rx="9" fill="none" stroke="#fff" stroke-width="6"/><g fill="#121d1b"><circle cx="249" cy="189" r="33"/><circle cx="219" cy="226" r="33"/><circle cx="278" cy="226" r="33"/><path d="M246 224h9l20 67h-51z"/></g></g>
+<g transform="rotate(21 433 211)"><rect x="339" y="82" width="181" height="273" rx="17" fill="url(#paper)" stroke="#ecd18f" stroke-width="8"/><rect x="352" y="95" width="155" height="247" rx="9" fill="none" stroke="#fff" stroke-width="6"/><path d="M430 290 C401 257 374 229 379 193 C381 166 409 161 428 180 C446 151 486 160 488 190 C490 227 447 272 430 290Z" fill="#be223b"/></g>
+<rect x="256" y="64" width="173" height="293" rx="18" fill="url(#paper)" stroke="#f3dc9a" stroke-width="9"/><rect x="270" y="78" width="145" height="265" rx="12" fill="none" stroke="#fffefa" stroke-width="6"/>
+<path d="M344 129C327 172 294 188 295 226 C297 263 328 266 341 250 L331 294H362L353 250 C370 263 398 262 396 229 C396 192 360 164 344 129Z" fill="#131c1b"/></g>
+<g filter="url(#shade)"><path d="M281 91L265 30L304 51L343 8L387 52L424 29L409 93Z" fill="url(#g)" stroke="#8f5811" stroke-width="5"/><rect x="282" y="88" width="126" height="21" rx="8" fill="url(#g)" stroke="#94631c" stroke-width="4"/><circle cx="265" cy="29" r="11" fill="#ffe999"/><circle cx="343" cy="8" r="12" fill="#fff3b1"/><circle cx="424" cy="29" r="11" fill="#ffe999"/></g>
+<g fill="#fff6c5" opacity=".8"><circle cx="481" cy="45" r="4"/><circle cx="204" cy="62" r="4"/><circle cx="535" cy="143" r="3"/></g></svg>
