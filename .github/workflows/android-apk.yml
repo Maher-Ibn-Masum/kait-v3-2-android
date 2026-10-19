@@ -1,0 +1,54 @@
+name: Build Kait V3.2 Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  android-debug-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install project dependencies
+        run: npm install
+      - name: Check game JavaScript syntax
+        run: |
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          import re
+          s=Path('www/index.html').read_text()
+          scripts=re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',s,re.S|re.I)
+          Path('/tmp/kait-code.js').write_text('\n'.join(scripts))
+          PYCODE
+          node --check /tmp/kait-code.js
+      - name: Prepare Android icon
+        run: python3 -m pip install --quiet Pillow
+      - name: Create Android project
+        run: npx cap add android
+      - name: Install native phone-hosted WebSocket server
+        run: python3 scripts/setup-android-ci.py
+      - name: Sync web game into Android
+        run: npx cap sync android
+      - name: Build installable debug APK
+        working-directory: android
+        run: bash gradlew assembleDebug --no-daemon --stacktrace
+      - name: Upload APK
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kait-v3-2-integrated-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
